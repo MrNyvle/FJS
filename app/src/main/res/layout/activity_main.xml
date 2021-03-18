@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollViewMain"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/LayoutMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -35,12 +36,13 @@
                 android:layout_height="20dp" />
 
             <LinearLayout
+                android:id="@+id/LayoutImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/imageViewSaintJo"
                     android:layout_width="491dp"
                     android:layout_height="138dp"
                     android:layout_weight="0.5"
@@ -48,7 +50,7 @@
                     tools:srcCompat="@drawable/campus_stjo" />
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewCentreAudreyBarbier"
                     android:layout_width="466dp"
                     android:layout_height="138dp"
                     android:layout_weight="0.5"
@@ -61,7 +63,7 @@
                 android:layout_height="20dp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewInformationPersonnel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#3F51B5"
@@ -71,6 +73,7 @@
                 android:textSize="18sp" />
 
             <LinearLayout
+                android:id="@+id/LayoutInfoPerso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -80,23 +83,17 @@
                     android:layout_height="match_parent" />
 
                 <LinearLayout
+                    android:id="@+id/LayoutDecalage"
                     android:layout_width="match_parent"
                     android:layout_height="860dp"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Si Lycéen/étudiant, niveau d'etudes:"
-                        android:textColor="#000000" />
 
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView4"
+                        android:id="@+id/textViewHommeFemme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
@@ -105,6 +102,7 @@
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupHommeFemme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -142,7 +140,7 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/textViewAge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Vous avez :"
@@ -209,24 +207,26 @@
                         android:layout_height="20dp" />
 
                     <LinearLayout
+                        android:id="@+id/LayoutVille"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/textViewVille"
                             android:layout_width="177dp"
                             android:layout_height="wrap_content"
                             android:text="Lieu d'habitation (Ville) :"
                             android:textColor="#000000" />
 
                         <Spinner
-                            android:id="@+id/spinner"
+                            android:id="@+id/spinnerVille"
                             android:layout_width="389dp"
                             android:layout_height="match_parent" />
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/LayoutAutreVille"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -236,14 +236,14 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/textView2"
+                            android:id="@+id/textViewAutreVille"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Autre : "
                             android:textColor="#000000" />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName"
+                            android:id="@+id/editTextAutreVille"
                             android:layout_width="401dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -258,13 +258,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView6"
+                        android:id="@+id/textViewSituationActuelle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Situation actuelle :"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupSituationActuelle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:selectionRequired="true"
@@ -275,7 +276,7 @@
                             android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip9"
+                            android:id="@+id/chipLycéen"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -286,7 +287,7 @@
                             android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip11"
+                            android:id="@+id/chipEtudiant"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -297,7 +298,7 @@
                             android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip10"
+                            android:id="@+id/chipRechercheEmploi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -310,13 +311,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView13"
+                        android:id="@+id/textViewNiveauEtude"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Si lycéen/étudiant, niveau d'études : "
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupNiveauEtude"
                         android:layout_width="match_parent"
                         android:layout_height="50dp">
 
@@ -325,29 +327,18 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip12"
+                            android:id="@+id/chip1erTerminale"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Premiere/Terminal" />
+                            android:text="Premiere/Terminale" />
 
                         <Space
                             android:layout_width="50dp"
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:checkable="true"
-                            android:text="3ème année post bac" />
-
-                        <Space
-                            android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip15"
+                            android:id="@+id/chip1erPostBac"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:checkable="true"
@@ -358,11 +349,22 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip14"
+                            android:id="@+id/chip2ePostBac"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:checkable="true"
                             android:text="2ème année post bac" />
+
+                        <Space
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip3ePostBac"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:checkable="true"
+                            android:text="3ème année post bac" />
 
                         <Space
                             android:layout_width="50dp"
@@ -374,13 +376,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView8"
+                        android:id="@+id/textViewDiplomeObtenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Diplôme obtenu (le plus élevé) :"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupDiplomeObtenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:selectionRequired="true"
@@ -391,7 +394,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip20"
+                            android:id="@+id/chipDiplomeAucun"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -402,18 +405,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip16"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checkable="true"
-                            android:text="BTS/DUT" />
-
-                        <Space
-                            android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip19"
+                            android:id="@+id/chipDiplomeCapBep"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -424,22 +416,34 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip18"
+                            android:id="@+id/chipBac"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Licence et plus" />
+                            android:text="Bac" />
 
                         <Space
                             android:layout_width="50dp"
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip17"
+                            android:id="@+id/chipDiplomeBtsDut"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Bac" />
+                            android:text="BTS/DUT" />
+
+                        <Space
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipLicencePlus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkable="true"
+                            android:text="Licence et plus" />
+
                     </com.google.android.material.chip.ChipGroup>
 
                     <Space
@@ -447,7 +451,7 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/textViewAutreDiplomeScolaire"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Avez vous d'autre diplômes autre que scolaire ?"
@@ -462,7 +466,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip21"
+                            android:id="@+id/chipBafa"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -473,7 +477,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip22"
+                            android:id="@+id/chipBnssa"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -484,7 +488,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip23"
+                            android:id="@+id/chipPscAfgsu"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -495,7 +499,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip24"
+                            android:id="@+id/chipPse1Pse2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -506,7 +510,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip25"
+                            android:id="@+id/chipToeic"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -515,6 +519,7 @@
                     </com.google.android.material.chip.ChipGroup>
 
                     <LinearLayout
+                        android:id="@+id/LayoutAutreDiplome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -524,13 +529,13 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/textView10"
+                            android:id="@+id/textViewAutreScolaire"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Autre :" />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName2"
+                            android:id="@+id/editTextAutreDiplomeScolaire"
                             android:layout_width="413dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -544,13 +549,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/textViewPermis"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Avez-vous le permis ?"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupPermis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:clickable="true"
@@ -562,7 +568,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip28"
+                            android:id="@+id/chipPermisOui"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -573,7 +579,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip27"
+                            android:id="@+id/chipPermisNon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -585,13 +591,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView12"
+                        android:id="@+id/textViewVehicule"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Avez-vous un véhicule ?"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupVehicule"
                         android:layout_width="match_parent"
                         android:layout_height="51dp"
                         android:clickable="true"
@@ -603,7 +610,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip29"
+                            android:id="@+id/chipVehiculeOui"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -614,7 +621,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip30"
+                            android:id="@+id/chipVehiculeNon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -632,7 +639,7 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/textView14"
+                android:id="@+id/textViewForum2021"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#3F51B5"
@@ -642,6 +649,7 @@
                 android:textSize="18sp" />
 
             <LinearLayout
+                android:id="@+id/LayoutForum2021"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -651,6 +659,7 @@
                     android:layout_height="match_parent" />
 
                 <LinearLayout
+                    android:id="@+id/LayoutDecalage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -661,13 +670,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView15"
+                        android:id="@+id/textViewCommentInforme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Comment avez-vous été informé ? (plusieur réponnses possibles)"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupCommentInforme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -676,7 +686,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip4"
+                            android:id="@+id/chipInternet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Internet" />
@@ -686,7 +696,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip8"
+                            android:id="@+id/chipAnimation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Animation" />
@@ -696,7 +706,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip7"
+                            android:id="@+id/chipPresse"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Presse" />
@@ -706,7 +716,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip6"
+                            android:id="@+id/chipReseauxSociaux"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Réseaux sociaux" />
@@ -716,7 +726,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip5"
+                            android:id="@+id/chipVente"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -725,6 +735,7 @@
                     </com.google.android.material.chip.ChipGroup>
 
                     <LinearLayout
+                        android:id="@+id/LayoutCommentInfomeAutre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -734,13 +745,13 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/textView16"
+                            android:id="@+id/textViewCommentinfomeAutre"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Autre : " />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName3"
+                            android:id="@+id/editTextCommentInfomeAutre"
                             android:layout_width="339dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -754,13 +765,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/textViewSecteurActivite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Quel secteur d'activité vous intéresse ?"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupSecteurActivite"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -769,7 +781,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip34"
+                            android:id="@+id/chipRestauration"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -780,7 +792,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip33"
+                            android:id="@+id/chipAnimationActivite"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -791,7 +803,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip32"
+                            android:id="@+id/chipHotellerie"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -802,7 +814,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip31"
+                            android:id="@+id/chipServicePersonne"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -813,7 +825,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip26"
+                            android:id="@+id/chipVenteActivite"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -821,6 +833,7 @@
                     </com.google.android.material.chip.ChipGroup>
 
                     <LinearLayout
+                        android:id="@+id/layoutActiviteAutre"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -830,13 +843,13 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/textView19"
+                            android:id="@+id/textViewActiviteAutre"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Autre : " />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName4"
+                            android:id="@+id/editTextActiviteAutre"
                             android:layout_width="339dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -850,13 +863,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView20"
+                        android:id="@+id/textViewOrientation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Vous êtes-vous orienté(e) dans le forum ?"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupOrientation"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:singleSelection="true">
@@ -866,7 +880,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip38"
+                            android:id="@+id/chipTresFacilement"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -877,7 +891,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip37"
+                            android:id="@+id/chipFacilement"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -888,7 +902,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip35"
+                            android:id="@+id/chipDificilement"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -899,7 +913,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip36"
+                            android:id="@+id/chipTresDifficilement"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -911,7 +925,7 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView21"
+                        android:id="@+id/textViewOffres"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Avez-vous trouvé des offres intéressantes ?"
@@ -927,7 +941,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip40"
+                            android:id="@+id/chipOffresOui"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -938,13 +952,14 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip39"
+                            android:id="@+id/chipOffresNon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Non" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <LinearLayout
+                        android:id="@+id/LayoutOffresCount"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -954,13 +969,13 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/textView22"
+                            android:id="@+id/textViewOffresCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Si oui, Combien : " />
 
                         <EditText
-                            android:id="@+id/editTextNumber"
+                            android:id="@+id/editTextOffresCount"
                             android:layout_width="262dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -974,13 +989,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView23"
+                        android:id="@+id/textViewEntreprise"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Auprès de quelle entreprise, avez vous déposé un CV"
                         android:textColor="#000000" />
 
                     <LinearLayout
+                        android:id="@+id/LayoutEntreprise"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
@@ -990,14 +1006,14 @@
                             android:layout_height="wrap_content" />
 
                         <TextView
-                            android:id="@+id/textView25"
+                            android:id="@+id/textViewEntreprisePrecision"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Précisez :"
                             android:textColor="#000000" />
 
                         <EditText
-                            android:id="@+id/editTextTextPersonName6"
+                            android:id="@+id/editTextEntreprise"
                             android:layout_width="566dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
@@ -1011,13 +1027,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView26"
+                        android:id="@+id/textViewDecroche"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Avez-vous décroché ?"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupDecroche"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -1026,7 +1043,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip43"
+                            android:id="@+id/chipJob"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Un job" />
@@ -1036,7 +1053,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip42"
+                            android:id="@+id/chipContactRdv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -1047,7 +1064,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip41"
+                            android:id="@+id/chipInfo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -1059,13 +1076,14 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView27"
+                        android:id="@+id/textViewDeplacement"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Etes-vous prêt à vous déplacer ?"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupDeplacement"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -1074,7 +1092,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip45"
+                            android:id="@+id/chipFrance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -1085,7 +1103,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip44"
+                            android:id="@+id/chipHautDeFrance"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -1093,13 +1111,14 @@
                     </com.google.android.material.chip.ChipGroup>
 
                     <TextView
-                        android:id="@+id/textView28"
+                        android:id="@+id/textViewRayon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Si oui, dans un rayon de (si hébergement proposé !) :"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroupRayon"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -1108,9 +1127,10 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip48"
+                            android:id="@+id/chip30km"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="Maximum 30 km" />
 
                         <Space
@@ -1118,7 +1138,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip47"
+                            android:id="@+id/chip100km"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -1129,7 +1149,7 @@
                             android:layout_height="wrap_content" />
 
                         <com.google.android.material.chip.Chip
-                            android:id="@+id/chip46"
+                            android:id="@+id/chip100kmPlus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
@@ -1141,20 +1161,19 @@
                         android:layout_height="20dp" />
 
                     <TextView
-                        android:id="@+id/textView29"
+                        android:id="@+id/textViewRemarque"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Avez-vous des remarques particulières à formuler ?"
                         android:textColor="#000000" />
 
-                    <com.google.android.material.textfield.TextInputLayout
+                    <EditText
+                        android:id="@+id/editTextRemarque"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Remarques"
+                        android:inputType="textPersonName" />
 
                 </LinearLayout>
 
@@ -1165,6 +1184,7 @@
                 android:layout_height="20dp" />
 
             <LinearLayout
+                android:id="@+id/LayoutValider"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -1174,7 +1194,7 @@
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/buttonValider"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Valider"
