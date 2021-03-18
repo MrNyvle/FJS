@@ -46,6 +46,7 @@
                     android:layout_width="491dp"
                     android:layout_height="138dp"
                     android:layout_weight="0.5"
+                    android:contentDescription="@string/logostjo"
                     app:srcCompat="@drawable/campus_stjo"
                     tools:srcCompat="@drawable/campus_stjo" />
 
@@ -54,6 +55,7 @@
                     android:layout_width="466dp"
                     android:layout_height="138dp"
                     android:layout_weight="0.5"
+                    android:contentDescription="@string/logocentreab"
                     app:srcCompat="@drawable/logo_centre_audrey_bartier_wimereux"
                     tools:srcCompat="@drawable/logo_centre_audrey_bartier_wimereux" />
             </LinearLayout>
@@ -67,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#3F51B5"
-                android:text="Information personnel"
+                android:text="@string/information_personnel"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -97,7 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif"
-                        android:text="Vous êtes :"
+                        android:text="@string/vousEtes"
                         android:textAlignment="viewStart"
                         android:textColor="#000000" />
 
@@ -120,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Homme" />
+                            android:text="@string/homme" />
 
                         <Space
                             android:layout_width="50dp"
@@ -131,7 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Femme"
+                            android:text="@string/femme"
                             app:chipIconVisible="false" />
                     </com.google.android.material.chip.ChipGroup>
 
@@ -143,7 +145,7 @@
                         android:id="@+id/textViewAge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Vous avez :"
+                        android:text="@string/vous_avez"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -175,7 +177,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Entre 18 et 25 ans" />
+                            android:text="@string/entre_18_et_25_ans" />
 
                         <Space
                             android:layout_width="50dp"
@@ -186,7 +188,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Entre 26 et 64 ans"
+                            android:text="@string/entre_26_et_64_ans"
                             app:chipIconVisible="false" />
 
                         <Space
@@ -198,7 +200,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="65 ans et plus"
+                            android:text="@string/_65_ans_et_plus"
                             app:chipIconVisible="false" />
                     </com.google.android.material.chip.ChipGroup>
 
@@ -216,7 +218,7 @@
                             android:id="@+id/textViewVille"
                             android:layout_width="177dp"
                             android:layout_height="wrap_content"
-                            android:text="Lieu d'habitation (Ville) :"
+                            android:text="@string/lieu_d_habitation_ville"
                             android:textColor="#000000" />
 
                         <Spinner
@@ -239,7 +241,7 @@
                             android:id="@+id/textViewAutreVille"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Autre : "
+                            android:text="@string/autre"
                             android:textColor="#000000" />
 
                         <EditText
@@ -247,9 +249,10 @@
                             android:layout_width="401dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:hint="Nom de la ville"
+                            android:hint="@string/nom_de_la_ville"
                             android:inputType="textPersonName"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:autofillHints="" />
 
                     </LinearLayout>
 
@@ -261,7 +264,7 @@
                         android:id="@+id/textViewSituationActuelle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Situation actuelle :"
+                        android:text="@string/situation_actuelle"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -280,7 +283,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Lycéen" />
+                            android:text="@string/lyceen" />
 
                         <Space
                             android:layout_width="50dp"
@@ -291,7 +294,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Etudiant" />
+                            android:text="@string/etudiant" />
 
                         <Space
                             android:layout_width="50dp"
@@ -302,7 +305,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="A la recherche d'un emploi" />
+                            android:text="@string/a_la_recherche_d_un_emploi" />
 
                     </com.google.android.material.chip.ChipGroup>
 
@@ -314,7 +317,7 @@
                         android:id="@+id/textViewNiveauEtude"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Si lycéen/étudiant, niveau d'études : "
+                        android:text="@string/si_lyceen_etudiant_niveau_d_etudes"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -331,7 +334,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Premiere/Terminale" />
+                            android:text="@string/premiere_terminale" />
 
                         <Space
                             android:layout_width="50dp"
@@ -342,7 +345,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:checkable="true"
-                            android:text="1er année post bac" />
+                            android:text="@string/_1er_annee_post_bac" />
 
                         <Space
                             android:layout_width="50dp"
@@ -353,7 +356,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:checkable="true"
-                            android:text="2ème année post bac" />
+                            android:text="@string/_2eme_annee_post_bac" />
 
                         <Space
                             android:layout_width="50dp"
@@ -364,7 +367,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:checkable="true"
-                            android:text="3ème année post bac" />
+                            android:text="@string/_3eme_annee_post_bac" />
 
                         <Space
                             android:layout_width="50dp"
@@ -379,7 +382,7 @@
                         android:id="@+id/textViewDiplomeObtenu"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Diplôme obtenu (le plus élevé) :"
+                        android:text="@string/diplome_obtenu_le_plus_eleve"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -398,7 +401,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Aucun" />
+                            android:text="@string/aucun" />
 
                         <Space
                             android:layout_width="50dp"
@@ -409,7 +412,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="CAP/BEP" />
+                            android:text="@string/cap_bep" />
 
                         <Space
                             android:layout_width="50dp"
@@ -420,7 +423,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Bac" />
+                            android:text="@string/bac" />
 
                         <Space
                             android:layout_width="50dp"
@@ -431,7 +434,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="BTS/DUT" />
+                            android:text="@string/bts_dut" />
 
                         <Space
                             android:layout_width="50dp"
@@ -442,7 +445,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Licence et plus" />
+                            android:text="@string/licence_et_plus" />
 
                     </com.google.android.material.chip.ChipGroup>
 
@@ -454,7 +457,7 @@
                         android:id="@+id/textViewAutreDiplomeScolaire"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Avez vous d'autre diplômes autre que scolaire ?"
+                        android:text="@string/avez_vous_d_autre_diplomes_autre_que_scolaire"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -470,7 +473,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="BAFA" />
+                            android:text="@string/bafa" />
 
                         <Space
                             android:layout_width="50dp"
@@ -481,7 +484,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="BNSSA" />
+                            android:text="@string/bnssa" />
 
                         <Space
                             android:layout_width="50dp"
@@ -492,7 +495,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="PSC/AFGSU" />
+                            android:text="@string/psc_afgsu" />
 
                         <Space
                             android:layout_width="50dp"
@@ -503,7 +506,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="PSE1/PSE2" />
+                            android:text="@string/pse1_pse2" />
 
                         <Space
                             android:layout_width="50dp"
@@ -514,7 +517,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="TOEIC" />
+                            android:text="@string/toeic" />
 
                     </com.google.android.material.chip.ChipGroup>
 
@@ -532,16 +535,17 @@
                             android:id="@+id/textViewAutreScolaire"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Autre :" />
+                            android:text="@string/autre" />
 
                         <EditText
                             android:id="@+id/editTextAutreDiplomeScolaire"
                             android:layout_width="413dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:hint="Autre Diplome"
+                            android:hint="@string/autre_diplome"
                             android:inputType="textPersonName"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            android:autofillHints="" />
                     </LinearLayout>
 
                     <Space
@@ -552,7 +556,7 @@
                         android:id="@+id/textViewPermis"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Avez-vous le permis ?"
+                        android:text="@string/avez_vous_le_permis"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -561,7 +565,8 @@
                         android:layout_height="wrap_content"
                         android:clickable="true"
                         app:selectionRequired="true"
-                        app:singleSelection="true">
+                        app:singleSelection="true"
+                        android:focusable="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -572,7 +577,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Oui" />
+                            android:text="@string/oui" />
 
                         <Space
                             android:layout_width="50dp"
@@ -583,7 +588,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Non" />
+                            android:text="@string/non" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <Space
@@ -594,7 +599,7 @@
                         android:id="@+id/textViewVehicule"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Avez-vous un véhicule ?"
+                        android:text="@string/avez_vous_un_vehicule"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -603,7 +608,8 @@
                         android:layout_height="51dp"
                         android:clickable="true"
                         app:selectionRequired="true"
-                        app:singleSelection="true">
+                        app:singleSelection="true"
+                        android:focusable="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -614,7 +620,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Oui" />
+                            android:text="@string/oui" />
 
                         <Space
                             android:layout_width="50dp"
@@ -625,7 +631,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Non" />
+                            android:text="@string/non" />
 
                     </com.google.android.material.chip.ChipGroup>
 
@@ -633,17 +639,12 @@
 
             </LinearLayout>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1" />
-
             <TextView
                 android:id="@+id/textViewForum2021"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#3F51B5"
-                android:text="Forum 2021"
+                android:text="@string/forum_2021"
                 android:textAlignment="center"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp" />
@@ -660,9 +661,8 @@
 
                 <LinearLayout
                     android:id="@+id/LayoutDecalageForum"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <Space
@@ -673,7 +673,7 @@
                         android:id="@+id/textViewCommentInforme"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Comment avez-vous été informé ? (plusieur réponnses possibles)"
+                        android:text="@string/comment_avez_vous_ete_informe_plusieur_reponnses_possibles"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -689,7 +689,7 @@
                             android:id="@+id/chipInternet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Internet" />
+                            android:text="@string/internet" />
 
                         <Space
                             android:layout_width="50dp"
@@ -699,7 +699,7 @@
                             android:id="@+id/chipAnimation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Animation" />
+                            android:text="@string/animation" />
 
                         <Space
                             android:layout_width="50dp"
@@ -709,7 +709,7 @@
                             android:id="@+id/chipPresse"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Presse" />
+                            android:text="@string/presse" />
 
                         <Space
                             android:layout_width="50dp"
@@ -719,7 +719,7 @@
                             android:id="@+id/chipReseauxSociaux"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Réseaux sociaux" />
+                            android:text="@string/reseaux_sociaux" />
 
                         <Space
                             android:layout_width="50dp"
@@ -730,7 +730,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Vente" />
+                            android:text="@string/vente" />
 
                     </com.google.android.material.chip.ChipGroup>
 
@@ -748,12 +748,14 @@
                             android:id="@+id/textViewCommentinfomeAutre"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Autre : " />
+                            android:labelFor="@id/editTextCommentInfomeAutre"
+                            android:text="@string/autre" />
 
                         <EditText
                             android:id="@+id/editTextCommentInfomeAutre"
                             android:layout_width="339dp"
                             android:layout_height="wrap_content"
+                            android:autofillHints=""
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:textSize="14sp" />
@@ -768,7 +770,7 @@
                         android:id="@+id/textViewSecteurActivite"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Quel secteur d'activité vous intéresse ?"
+                        android:text="@string/quel_secteur_d_activite_vous_interesse"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -785,7 +787,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Restauration" />
+                            android:text="@string/restauration" />
 
                         <Space
                             android:layout_width="50dp"
@@ -796,7 +798,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Animation" />
+                            android:text="@string/animation" />
 
                         <Space
                             android:layout_width="50dp"
@@ -807,7 +809,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Hôtellerie" />
+                            android:text="@string/hotellerie" />
 
                         <Space
                             android:layout_width="50dp"
@@ -818,7 +820,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text=" Services à la personne" />
+                            android:text="@string/services_la_personne" />
 
                         <Space
                             android:layout_width="50dp"
@@ -829,7 +831,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Vente" />
+                            android:text="@string/vente" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <LinearLayout
@@ -846,12 +848,14 @@
                             android:id="@+id/textViewActiviteAutre"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Autre : " />
+                            android:labelFor="@id/editTextActiviteAutre"
+                            android:text="@string/autre" />
 
                         <EditText
                             android:id="@+id/editTextActiviteAutre"
                             android:layout_width="339dp"
                             android:layout_height="wrap_content"
+                            android:autofillHints=""
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:textSize="14sp" />
@@ -866,7 +870,7 @@
                         android:id="@+id/textViewOrientation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Vous êtes-vous orienté(e) dans le forum ?"
+                        android:text="@string/vous_etes_vous_orientee_dans_le_forum"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -884,7 +888,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Très facilement" />
+                            android:text="@string/tres_facilement" />
 
                         <Space
                             android:layout_width="50dp"
@@ -895,7 +899,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Assez facilement" />
+                            android:text="@string/assez_facilement" />
 
                         <Space
                             android:layout_width="50dp"
@@ -906,7 +910,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Difficilement" />
+                            android:text="@string/difficilement" />
 
                         <Space
                             android:layout_width="50dp"
@@ -917,7 +921,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Très difficilement" />
+                            android:text="@string/tres_difficilement" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <Space
@@ -928,7 +932,7 @@
                         android:id="@+id/textViewOffres"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Avez-vous trouvé des offres intéressantes ?"
+                        android:text="@string/avez_vous_trouve_des_offres_interessantes"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -945,7 +949,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Oui" />
+                            android:text="@string/oui" />
 
                         <Space
                             android:layout_width="50dp"
@@ -955,7 +959,7 @@
                             android:id="@+id/chipOffresNon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Non" />
+                            android:text="@string/non" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <LinearLayout
@@ -972,12 +976,14 @@
                             android:id="@+id/textViewOffresCount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Si oui, Combien : " />
+                            android:labelFor="@id/editTextOffresCount"
+                            android:text="@string/si_oui_combien" />
 
                         <EditText
                             android:id="@+id/editTextOffresCount"
                             android:layout_width="262dp"
                             android:layout_height="wrap_content"
+                            android:autofillHints=""
                             android:ems="10"
                             android:inputType="number"
                             android:textSize="14sp" />
@@ -992,7 +998,7 @@
                         android:id="@+id/textViewEntreprise"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Auprès de quelle entreprise, avez vous déposé un CV"
+                        android:text="@string/aupres_de_quelle_entreprise_avez_vous_depose_un_cv"
                         android:textColor="#000000" />
 
                     <LinearLayout
@@ -1009,13 +1015,15 @@
                             android:id="@+id/textViewEntreprisePrecision"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Précisez :"
+                            android:labelFor="@id/editTextEntreprise"
+                            android:text="@string/precisez"
                             android:textColor="#000000" />
 
                         <EditText
                             android:id="@+id/editTextEntreprise"
                             android:layout_width="566dp"
                             android:layout_height="wrap_content"
+                            android:autofillHints=""
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:textSize="14sp" />
@@ -1030,7 +1038,7 @@
                         android:id="@+id/textViewDecroche"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Avez-vous décroché ?"
+                        android:text="@string/avez_vous_decroche"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -1046,7 +1054,7 @@
                             android:id="@+id/chipJob"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Un job" />
+                            android:text="@string/un_job" />
 
                         <Space
                             android:layout_width="50dp"
@@ -1057,7 +1065,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Un contact/rendez-vous" />
+                            android:text="@string/un_contact_rendez_vous" />
 
                         <Space
                             android:layout_width="50dp"
@@ -1068,7 +1076,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Des information" />
+                            android:text="@string/des_information" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <Space
@@ -1079,7 +1087,7 @@
                         android:id="@+id/textViewDeplacement"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Etes-vous prêt à vous déplacer ?"
+                        android:text="@string/etes_vous_pret_a_vous_deplacer"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -1096,7 +1104,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="En France" />
+                            android:text="@string/en_france" />
 
                         <Space
                             android:layout_width="50dp"
@@ -1107,14 +1115,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Dans la région haut de France" />
+                            android:text="@string/dans_la_region_haut_de_france" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <TextView
                         android:id="@+id/textViewRayon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Si oui, dans un rayon de (si hébergement proposé !) :"
+                        android:text="@string/si_oui_dans_un_rayon_de_si_hebergement_propose"
                         android:textColor="#000000" />
 
                     <com.google.android.material.chip.ChipGroup
@@ -1131,7 +1139,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Maximum 30 km" />
+                            android:text="@string/maximum_30_km" />
 
                         <Space
                             android:layout_width="50dp"
@@ -1142,7 +1150,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Maximum 100 km" />
+                            android:text="@string/maximum_100_km" />
 
                         <Space
                             android:layout_width="50dp"
@@ -1153,7 +1161,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:checkable="true"
-                            android:text="Plus de 100 km" />
+                            android:text="@string/plus_de_100_km" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <Space
@@ -1164,7 +1172,7 @@
                         android:id="@+id/textViewRemarque"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Avez-vous des remarques particulières à formuler ?"
+                        android:text="@string/avez_vous_des_remarques_particulieres_a_formuler"
                         android:textColor="#000000" />
 
                     <EditText
@@ -1172,8 +1180,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="10"
-                        android:hint="Remarques"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/remarques"
+                        android:inputType="textPersonName"
+                        android:autofillHints="" />
 
                 </LinearLayout>
 
@@ -1197,7 +1206,7 @@
                     android:id="@+id/buttonValider"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Valider"
+                    android:text="@string/valider"
                     android:textAlignment="center" />
             </LinearLayout>
 
