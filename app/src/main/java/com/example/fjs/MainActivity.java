@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import android.os.Environment;
 import android.view.View;
@@ -165,16 +166,20 @@ public class MainActivity extends AppCompatActivity {
     public ArrayList<String> getInformations(){
         ArrayList<String> info = new ArrayList<>();
 
+        Chip tmp;
+
         //heure
         info.add(getHeureVisite());
 
         //genre
-        String genre = findViewById(chpGrpHommeFemme.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpHommeFemme.getCheckedChipId());
+        String genre = tmp.getText().toString();
 
         info.add(genre);
 
         //age
-        String age = findViewById(chpGrpAge.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpAge.getCheckedChipId());
+        String age = tmp.getText().toString();
 
         info.add(age);
 
@@ -182,12 +187,14 @@ public class MainActivity extends AppCompatActivity {
         info.add(Ville);
 
         //Situation
-        String Situation = findViewById(chpGrpSituationActuel.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpSituationActuel.getCheckedChipId());
+        String Situation = tmp.getText().toString();
 
         //niveau etudes
         String Etude;
         if(Situation != "A la recherche d'un emploi"){
-             Etude = findViewById(chpGrpNiveauEtude.getCheckedChipId()).toString();
+            tmp = findViewById(chpGrpNiveauEtude.getCheckedChipId());
+            Etude = tmp.getText().toString();
         }
         else{
              Etude = "";
@@ -196,7 +203,8 @@ public class MainActivity extends AppCompatActivity {
         info.add(Etude);
 
         //Diplome
-        String Diplome = findViewById(chpGrpDiplomeObtenu.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpDiplomeObtenu.getCheckedChipId());
+        String Diplome = tmp.getText().toString();
 
         info.add(Diplome);
 
@@ -224,8 +232,11 @@ public class MainActivity extends AppCompatActivity {
         info.add(lesDiplomes);
 
         //voiture/permis
-        String permis = findViewById(chpGrpPermis.getCheckedChipId()).toString();
-        String voiture = findViewById(chpGrpVehicule.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpPermis.getCheckedChipId());
+        String permis = tmp.getText().toString();
+
+        tmp = findViewById(chpGrpVehicule.getCheckedChipId());
+        String voiture = tmp.getText().toString();
 
         info.add(permis);
         info.add(voiture);
@@ -277,12 +288,14 @@ public class MainActivity extends AppCompatActivity {
         info.add(lesActivites);
 
         //orientation
-        String orientation = findViewById(chpGrpOrientation.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpOrientation.getCheckedChipId());
+        String orientation = tmp.getText().toString();
 
         info.add(orientation);
 
         //offres interessante
-        String offre = findViewById(chpGrpOffreInteressante.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpOffreInteressante.getCheckedChipId());
+        String offre = tmp.getText().toString();
 
         info.add(offre);
 
@@ -319,13 +332,15 @@ public class MainActivity extends AppCompatActivity {
 
         // deplacement
 
-        String deplacement = findViewById(chpGrpDeplacement.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpDeplacement.getCheckedChipId());
+        String deplacement = tmp.getText().toString();
 
         info.add(deplacement);
 
         //rayon deplacement
 
-        String rayon = findViewById(chpGrpRayon.getCheckedChipId()).toString();
+        tmp = findViewById(chpGrpRayon.getCheckedChipId());
+        String rayon = tmp.getText().toString();
 
         info.add(rayon);
 
