@@ -75,4 +75,32 @@
     <string name="remarques">Remarques</string>
     <string name="logostjo">LogoStjo</string>
     <string name="logocentreab">LogoCentreAB</string>
+    <string name="logo_sp3s">logo sp3s</string>
+    <string name="bannersjto">BannerSjto</string>
+
+    <string-array name="Ville">
+        <item>--Selectionnez une ville--</item>
+        <item>Baincthun</item>
+        <item>Boulogne-sur-mer</item>
+        <item>Condette</item>
+        <item>Conteville-les-Boulogne</item>
+        <item>Dannes</item>
+        <item>Echinghen</item>
+        <item>Equihen plage</item>
+        <item>Hesdigneul-les-Boulogne</item>
+        <item>Hesdin l\'abbé</item>
+        <item>Isques</item>
+        <item>La Cappelle-les-Boulogne</item>
+        <item>Le Portel</item>
+        <item>Nesles</item>
+        <item>Neufchâtel Hardelot</item>
+        <item>Outreau</item>
+        <item>Pernes-lez-Boulogne</item>
+        <item>Pittefaux</item>
+        <item>St Etienne-ou-Mont</item>
+        <item>St Léonard</item>
+        <item>St-Martin-Boulogne</item>
+        <item>Wimereux</item>
+        <item>Wimille</item>
+    </string-array>
 </resources>
