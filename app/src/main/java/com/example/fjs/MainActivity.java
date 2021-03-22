@@ -215,12 +215,13 @@ public class MainActivity extends AppCompatActivity {
         if( DiplomeIDs != null){
 
             for (Integer id:DiplomeIDs) {
+                tmp = findViewById(id);
                 if(!lesDiplomes.isEmpty()){
 
-                    lesDiplomes += ", " + findViewById(id).toString();
+                    lesDiplomes += ", " + tmp.getText().toString();
 
                 }
-                else lesDiplomes += findViewById(id).toString();
+                else lesDiplomes += tmp.getText().toString();
             }
 
         }
@@ -248,12 +249,13 @@ public class MainActivity extends AppCompatActivity {
         if( InfoIDs != null){
 
             for (Integer id:InfoIDs) {
+                tmp = findViewById(id);
                 if(!lesInfo.isEmpty()){
 
-                    lesInfo += ", " + findViewById(id).toString();
+                    lesInfo += ", " + tmp.getText().toString();
 
                 }
-                else lesInfo += findViewById(id).toString();
+                else lesInfo += tmp.getText().toString();
             }
 
         }
@@ -271,12 +273,13 @@ public class MainActivity extends AppCompatActivity {
         if( ActiviteIDs != null){
 
             for (Integer id:ActiviteIDs) {
+                tmp = findViewById(id);
                 if(!lesActivites.isEmpty()){
 
-                    lesActivites += ", " + findViewById(id).toString();
+                    lesActivites += ", " + tmp.getText().toString();
 
                 }
-                else lesActivites += findViewById(id).toString();
+                else lesActivites += tmp.getText().toString();
             }
 
         }
@@ -318,12 +321,13 @@ public class MainActivity extends AppCompatActivity {
         if( decrocheIDs != null){
 
             for (Integer id:decrocheIDs) {
+                tmp = findViewById(id);
                 if(! lesDecroche.isEmpty()){
 
-                    lesDecroche += ", " + findViewById(id).toString();
+                    lesDecroche += ", " + tmp.getText().toString();
 
                 }
-                else  lesDecroche += findViewById(id).toString();
+                else  lesDecroche += tmp.getText().toString();
             }
 
         }
