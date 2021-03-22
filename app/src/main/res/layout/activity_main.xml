@@ -323,7 +323,9 @@
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chipGroupNiveauEtude"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="50dp"
+                        app:selectionRequired="true"
+                        app:singleSelection="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -535,7 +537,8 @@
                             android:id="@+id/textViewAutreScolaire"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/autre" />
+                            android:text="@string/autre"
+                            android:textColor="#000000" />
 
                         <EditText
                             android:id="@+id/editTextAutreDiplomeScolaire"
@@ -661,7 +664,7 @@
 
                 <LinearLayout
                     android:id="@+id/LayoutDecalageForum"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
@@ -689,6 +692,7 @@
                             android:id="@+id/chipInternet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="@string/internet" />
 
                         <Space
@@ -699,6 +703,7 @@
                             android:id="@+id/chipAnimation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="@string/animation" />
 
                         <Space
@@ -709,6 +714,7 @@
                             android:id="@+id/chipPresse"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="@string/presse" />
 
                         <Space
@@ -719,6 +725,7 @@
                             android:id="@+id/chipReseauxSociaux"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="@string/reseaux_sociaux" />
 
                         <Space
@@ -749,7 +756,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:labelFor="@id/editTextCommentInfomeAutre"
-                            android:text="@string/autre" />
+                            android:text="@string/autre"
+                            android:textColor="#000000" />
 
                         <EditText
                             android:id="@+id/editTextCommentInfomeAutre"
@@ -849,7 +857,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:labelFor="@id/editTextActiviteAutre"
-                            android:text="@string/autre" />
+                            android:text="@string/autre"
+                            android:textColor="#000000" />
 
                         <EditText
                             android:id="@+id/editTextActiviteAutre"
@@ -877,6 +886,7 @@
                         android:id="@+id/chipGroupOrientation"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        app:selectionRequired="true"
                         app:singleSelection="true">
 
                         <Space
@@ -938,6 +948,7 @@
                     <com.google.android.material.chip.ChipGroup
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        app:selectionRequired="true"
                         app:singleSelection="true">
 
                         <Space
@@ -959,6 +970,7 @@
                             android:id="@+id/chipOffresNon"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="@string/non" />
                     </com.google.android.material.chip.ChipGroup>
 
@@ -977,7 +989,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:labelFor="@id/editTextOffresCount"
-                            android:text="@string/si_oui_combien" />
+                            android:text="@string/si_oui_combien"
+                            android:textColor="#000000" />
 
                         <EditText
                             android:id="@+id/editTextOffresCount"
@@ -1054,6 +1067,7 @@
                             android:id="@+id/chipJob"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkable="true"
                             android:text="@string/un_job" />
 
                         <Space
@@ -1093,7 +1107,8 @@
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chipGroupDeplacement"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        app:singleSelection="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -1128,7 +1143,9 @@
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chipGroupRayon"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        app:selectionRequired="false"
+                        app:singleSelection="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -1179,10 +1196,10 @@
                         android:id="@+id/editTextRemarque"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:autofillHints=""
                         android:ems="10"
                         android:hint="@string/remarques"
-                        android:inputType="textPersonName"
-                        android:autofillHints="" />
+                        android:inputType="textPersonName" />
 
                 </LinearLayout>
 
