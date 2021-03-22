@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <ScrollView
         android:id="@+id/scrollViewMain"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +95,7 @@
                 <LinearLayout
                     android:id="@+id/LayoutDecalageInfoPerso"
                     android:layout_width="match_parent"
-                    android:layout_height="860dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <Space
@@ -258,11 +258,11 @@
                             android:id="@+id/editTextAutreVille"
                             android:layout_width="401dp"
                             android:layout_height="wrap_content"
+                            android:autofillHints=""
                             android:ems="10"
                             android:hint="@string/nom_de_la_ville"
                             android:inputType="textPersonName"
-                            android:textSize="14sp"
-                            android:autofillHints="" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -555,11 +555,11 @@
                             android:id="@+id/editTextAutreDiplomeScolaire"
                             android:layout_width="413dp"
                             android:layout_height="wrap_content"
+                            android:autofillHints=""
                             android:ems="10"
                             android:hint="@string/autre_diplome"
                             android:inputType="textPersonName"
-                            android:textSize="14sp"
-                            android:autofillHints="" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <Space
@@ -576,11 +576,11 @@
                     <com.google.android.material.chip.ChipGroup
                         android:id="@+id/chipGroupPermis"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="37dp"
                         android:clickable="true"
+                        android:focusable="true"
                         app:selectionRequired="true"
-                        app:singleSelection="true"
-                        android:focusable="true">
+                        app:singleSelection="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -621,9 +621,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="51dp"
                         android:clickable="true"
+                        android:focusable="true"
                         app:selectionRequired="true"
-                        app:singleSelection="true"
-                        android:focusable="true">
+                        app:singleSelection="true">
 
                         <Space
                             android:layout_width="50dp"
@@ -652,6 +652,10 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
             <TextView
                 android:id="@+id/textViewForum2021"
@@ -1046,7 +1050,7 @@
 
                         <EditText
                             android:id="@+id/editTextEntreprise"
-                            android:layout_width="566dp"
+                            android:layout_width="372dp"
                             android:layout_height="wrap_content"
                             android:autofillHints=""
                             android:ems="10"

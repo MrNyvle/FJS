@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -21,35 +22,40 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
     FileWriter csvWriter = null;
-    ChipGroup chpGrpHommeFemme = findViewById(R.id.chipGroupHommeFemme);
-    ChipGroup chpGrpAge = findViewById(R.id.chipGroupAge);
-    ChipGroup chpGrpSituationActuel = findViewById(R.id.chipGroupSituationActuelle);
-    ChipGroup chpGrpNiveauEtude = findViewById(R.id.chipGroupNiveauEtude);
-    ChipGroup chpGrpDiplomeObtenu = findViewById(R.id.chipGroupDiplomeObtenu);
-    ChipGroup chpGrpDiplomeAutre = findViewById(R.id.chipGroupDiplomeAutre);
-    ChipGroup chpGrpPermis = findViewById(R.id.chipGroupPermis);
-    ChipGroup chpGrpVehicule = findViewById(R.id.chipGroupVehicule);
-    ChipGroup chpGrpCommentInforme = findViewById(R.id.chipGroupCommentInforme);
-    ChipGroup chpGrpSecteurActivite = findViewById(R.id.chipGroupSecteurActivite);
-    ChipGroup chpGrpOrientation = findViewById(R.id.chipGroupOrientation);
-    ChipGroup chpGrpOffreInteressante = findViewById(R.id.chipGroupOffreInteressante);
-    ChipGroup chpGrpDecroche = findViewById(R.id.chipGroupDecroche);
-    ChipGroup chpGrpDeplacement = findViewById(R.id.chipGroupDeplacement);
-    ChipGroup chpGrpRayon = findViewById(R.id.chipGroupRayon);
 
-    EditText AutreVille = findViewById(R.id.editTextAutreVille);
-    EditText AutreDiplomeSco = findViewById(R.id.editTextAutreDiplomeScolaire);
-    EditText AutreInformation = findViewById(R.id.editTextCommentInfomeAutre);
-    EditText AutreActivite = findViewById(R.id.editTextActiviteAutre);
-    EditText OffreCount = findViewById(R.id.editTextOffresCount);
-    EditText EntrepriseCV = findViewById(R.id.editTextEntreprise);
-    EditText Remarques = findViewById(R.id.editTextRemarque);
 
-    Spinner Villes = findViewById(R.id.spinnerVille);
+    String Ville = null;
+
+    ChipGroup chpGrpHommeFemme;
+    ChipGroup chpGrpAge;
+    ChipGroup chpGrpSituationActuel;
+    ChipGroup chpGrpNiveauEtude;
+    ChipGroup chpGrpDiplomeObtenu;
+    ChipGroup chpGrpDiplomeAutre;
+    ChipGroup chpGrpPermis;
+    ChipGroup chpGrpVehicule;
+    ChipGroup chpGrpCommentInforme;
+    ChipGroup chpGrpSecteurActivite;
+    ChipGroup chpGrpOrientation;
+    ChipGroup chpGrpOffreInteressante;
+    ChipGroup chpGrpDecroche;
+    ChipGroup chpGrpDeplacement;
+    ChipGroup chpGrpRayon;
+
+    Spinner spinnerVille;
+
+    EditText AutreVille;
+    EditText AutreDiplomeSco;
+    EditText AutreInformation;
+    EditText AutreActivite;
+    EditText OffreCount;
+    EditText EntrepriseCV;
+    EditText Remarques ;
 
 
     @Override
@@ -58,6 +64,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         Button buttonValider = findViewById(R.id.buttonValider);
+
+        chpGrpHommeFemme = findViewById(R.id.chipGroupHommeFemme);
+        chpGrpAge = findViewById(R.id.chipGroupAge);
+        chpGrpSituationActuel = findViewById(R.id.chipGroupSituationActuelle);
+        chpGrpNiveauEtude = findViewById(R.id.chipGroupNiveauEtude);
+        chpGrpDiplomeObtenu = findViewById(R.id.chipGroupDiplomeObtenu);
+        chpGrpDiplomeAutre = findViewById(R.id.chipGroupDiplomeAutre);
+        chpGrpPermis = findViewById(R.id.chipGroupPermis);
+        chpGrpVehicule = findViewById(R.id.chipGroupVehicule);
+        chpGrpCommentInforme = findViewById(R.id.chipGroupCommentInforme);
+        chpGrpSecteurActivite = findViewById(R.id.chipGroupSecteurActivite);
+        chpGrpOrientation = findViewById(R.id.chipGroupOrientation);
+        chpGrpOffreInteressante = findViewById(R.id.chipGroupOffreInteressante);
+        chpGrpDecroche = findViewById(R.id.chipGroupDecroche);
+        chpGrpDeplacement = findViewById(R.id.chipGroupDeplacement);
+        chpGrpRayon = findViewById(R.id.chipGroupRayon);
+
+        spinnerVille = findViewById(R.id.spinnerVille);
+
+        AutreVille = findViewById(R.id.editTextAutreVille);
+        AutreDiplomeSco = findViewById(R.id.editTextAutreDiplomeScolaire);
+        AutreInformation = findViewById(R.id.editTextCommentInfomeAutre);
+        AutreActivite = findViewById(R.id.editTextActiviteAutre);
+        OffreCount = findViewById(R.id.editTextOffresCount);
+        EntrepriseCV = findViewById(R.id.editTextEntreprise);
+        Remarques = findViewById(R.id.editTextRemarque);
 
         buttonValider.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 if(!txt.exists())
                     lesDonnees.add(getNomsColonnes());
 
-                //lesDonnees.add(getLesInformations());
+                lesDonnees.add(getInformations());
                 String lesDonneesString = "";
 
                 for(int i = 0; i < lesDonnees.size(); i++) {
@@ -109,20 +141,217 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        spinnerVille.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (spinnerVille.getSelectedItemPosition() != 0){
+                    Ville = spinnerVille.getSelectedItem().toString();
+                }
+                else{
+                    Ville = AutreVille.getText().toString();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
 
 
     }
+
+    public ArrayList<String> getInformations(){
+        ArrayList<String> info = new ArrayList<>();
+
+        //heure
+        info.add(getHeureVisite());
+
+        //genre
+        String genre = findViewById(chpGrpHommeFemme.getCheckedChipId()).toString();
+
+        info.add(genre);
+
+        //age
+        String age = findViewById(chpGrpAge.getCheckedChipId()).toString();
+
+        info.add(age);
+
+        //ville
+        info.add(Ville);
+
+        //Situation
+        String Situation = findViewById(chpGrpSituationActuel.getCheckedChipId()).toString();
+
+        //niveau etudes
+        String Etude;
+        if(Situation != "A la recherche d'un emploi"){
+             Etude = findViewById(chpGrpNiveauEtude.getCheckedChipId()).toString();
+        }
+        else{
+             Etude = "";
+        }
+        info.add(Situation);
+        info.add(Etude);
+
+        //Diplome
+        String Diplome = findViewById(chpGrpDiplomeObtenu.getCheckedChipId()).toString();
+
+        info.add(Diplome);
+
+        //autre Diplome
+        List<Integer> DiplomeIDs;
+        DiplomeIDs = chpGrpDiplomeAutre.getCheckedChipIds();
+        String lesDiplomes="";
+        if( DiplomeIDs != null){
+
+            for (Integer id:DiplomeIDs) {
+                if(!lesDiplomes.isEmpty()){
+
+                    lesDiplomes += ", " + findViewById(id).toString();
+
+                }
+                else lesDiplomes += findViewById(id).toString();
+            }
+
+        }
+
+        if (AutreDiplomeSco != null){
+            lesDiplomes += AutreDiplomeSco.getText().toString();
+        }
+
+        info.add(lesDiplomes);
+
+        //voiture/permis
+        String permis = findViewById(chpGrpPermis.getCheckedChipId()).toString();
+        String voiture = findViewById(chpGrpVehicule.getCheckedChipId()).toString();
+
+        info.add(permis);
+        info.add(voiture);
+
+        //information du forum
+        List<Integer> InfoIDs;
+        InfoIDs = chpGrpCommentInforme.getCheckedChipIds();
+        String lesInfo="";
+        if( InfoIDs != null){
+
+            for (Integer id:InfoIDs) {
+                if(!lesInfo.isEmpty()){
+
+                    lesInfo += ", " + findViewById(id).toString();
+
+                }
+                else lesInfo += findViewById(id).toString();
+            }
+
+        }
+
+        if (AutreInformation != null){
+            lesInfo += AutreInformation.getText().toString();
+        }
+
+        info.add(lesInfo);
+
+        //Secteur activite
+        List<Integer> ActiviteIDs;
+        ActiviteIDs = chpGrpSecteurActivite.getCheckedChipIds();
+        String lesActivites="";
+        if( ActiviteIDs != null){
+
+            for (Integer id:ActiviteIDs) {
+                if(!lesActivites.isEmpty()){
+
+                    lesActivites += ", " + findViewById(id).toString();
+
+                }
+                else lesActivites += findViewById(id).toString();
+            }
+
+        }
+
+        if (AutreActivite != null){
+            lesActivites += AutreActivite.getText().toString();
+        }
+
+        info.add(lesActivites);
+
+        //orientation
+        String orientation = findViewById(chpGrpOrientation.getCheckedChipId()).toString();
+
+        info.add(orientation);
+
+        //offres interessante
+        String offre = findViewById(chpGrpOffreInteressante.getCheckedChipId()).toString();
+
+        info.add(offre);
+
+        //Nombre d'offre
+        String NBoffre = "";
+        NBoffre = OffreCount.getText().toString();
+
+        info.add(NBoffre);
+
+        //depose CV
+        String cv = "";
+        cv=EntrepriseCV.getText().toString();
+
+        info.add(cv);
+
+        //decroche
+        List<Integer> decrocheIDs;
+        decrocheIDs = chpGrpDecroche.getCheckedChipIds();
+        String lesDecroche="";
+        if( decrocheIDs != null){
+
+            for (Integer id:decrocheIDs) {
+                if(! lesDecroche.isEmpty()){
+
+                    lesDecroche += ", " + findViewById(id).toString();
+
+                }
+                else  lesDecroche += findViewById(id).toString();
+            }
+
+        }
+
+        info.add(lesDecroche);
+
+        // deplacement
+
+        String deplacement = findViewById(chpGrpDeplacement.getCheckedChipId()).toString();
+
+        info.add(deplacement);
+
+        //rayon deplacement
+
+        String rayon = findViewById(chpGrpRayon.getCheckedChipId()).toString();
+
+        info.add(rayon);
+
+        //remarques
+
+        String remarques = Remarques.getText().toString();
+
+        info.add(remarques);
+
+
+        return info;
+
+    }
+
     /*
     Retourne les noms des colonnes du fichier .txt dans une ArrayList
      */
     public ArrayList<String> getNomsColonnes() {
-        ArrayList<String> colonnes = new ArrayList<String>();
+        ArrayList<String> colonnes = new ArrayList<>();
 
         colonnes.add("Heure de visite");
         colonnes.add("Genre");
         colonnes.add("Age");
         colonnes.add("Lieu d'habitation (ville)");
         colonnes.add("Situation actuelle");
+        colonnes.add("Niveau d'études");
         colonnes.add("Diplôme obtenu");
         colonnes.add("Autres diplômes");
         colonnes.add("A le permis");
@@ -131,9 +360,11 @@ public class MainActivity extends AppCompatActivity {
         colonnes.add("Secteur d'activité");
         colonnes.add("S'est orienté(e) dans le forum");
         colonnes.add("Offres intéressantes");
+        colonnes.add("Nombre d'offres");
         colonnes.add("A postulé auprès de");
         colonnes.add("A décroché");
         colonnes.add("Peux se déplacer");
+        colonnes.add("Distance de déplacement");
         colonnes.add("Remarques particulières");
 
         return colonnes;
@@ -141,8 +372,7 @@ public class MainActivity extends AppCompatActivity {
     public String getHeureVisite() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        String time = sdf.format(cal.getTime());
-        return time;
+        return sdf.format(cal.getTime());
     }
 
     public void restartActivity(){
