@@ -13,6 +13,7 @@ import com.google.android.material.chip.ChipGroup;
 import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -92,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
         EntrepriseCV = findViewById(R.id.editTextEntreprise);
         Remarques = findViewById(R.id.editTextRemarque);
 
+        TextView test = findViewById(R.id.textViewAge);
+
         buttonValider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,17 +148,12 @@ public class MainActivity extends AppCompatActivity {
         spinnerVille.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (spinnerVille.getSelectedItemPosition() != 0){
-                    Ville = spinnerVille.getSelectedItem().toString();
-                }
-                else{
-                    Ville = AutreVille.getText().toString();
-                }
+                Ville = spinnerVille.getSelectedItem().toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                Ville = AutreVille.getText().toString();
             }
         });
 
@@ -184,6 +182,13 @@ public class MainActivity extends AppCompatActivity {
         info.add(age);
 
         //ville
+        
+        if (Ville.contains("--Selectionnez une ville--")){
+
+            Ville = AutreVille.getText().toString();
+
+        }
+        
         info.add(Ville);
 
         //Situation
@@ -226,8 +231,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if (AutreDiplomeSco != null){
-            lesDiplomes += AutreDiplomeSco.getText().toString();
+        if (AutreDiplomeSco.getText().length() != 0){
+
+            if(!lesDiplomes.isEmpty()){
+
+                lesDiplomes += ", " + AutreDiplomeSco.getText().toString();
+
+            }
+            else lesDiplomes += AutreDiplomeSco.getText().toString();
         }
 
         info.add(lesDiplomes);
@@ -260,8 +271,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if (AutreInformation != null){
-            lesInfo += AutreInformation.getText().toString();
+        if (AutreInformation.getText().length() != 0){
+
+            if(!lesInfo.isEmpty()){
+
+                lesInfo += ", " + AutreInformation.getText().toString();
+
+            }
+            else lesInfo += AutreInformation.getText().toString();
         }
 
         info.add(lesInfo);
@@ -284,8 +301,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        if (AutreActivite != null){
-            lesActivites += AutreActivite.getText().toString();
+        if (AutreActivite.getText().length() != 0){
+
+            if(!lesActivites.isEmpty()){
+
+                lesActivites += ", " + AutreActivite.getText().toString();
+
+            }
+            else lesActivites += AutreActivite.getText().toString();
         }
 
         info.add(lesActivites);
