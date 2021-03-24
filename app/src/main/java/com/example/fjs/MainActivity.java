@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     EditText AutreActivite;
     EditText OffreCount;
     EditText EntrepriseCV;
-    EditText Remarques ;
+    EditText Remarques;
 
 
     @Override
@@ -109,18 +109,17 @@ public class MainActivity extends AppCompatActivity {
                 String path = dir.getAbsolutePath() + "/" + nomFichier;
 
                 File txt = new File(path);
-                if(!txt.exists())
+                if (!txt.exists())
                     lesDonnees.add(getNomsColonnes());
 
                 lesDonnees.add(getInformations());
                 String lesDonneesString = "";
 
-                for(int i = 0; i < lesDonnees.size(); i++) {
-                    for(int j = 0; j < lesDonnees.get(i).size(); j++) {
-                        if(j == lesDonnees.get(i).size() - 1) {
+                for (int i = 0; i < lesDonnees.size(); i++) {
+                    for (int j = 0; j < lesDonnees.get(i).size(); j++) {
+                        if (j == lesDonnees.get(i).size() - 1) {
                             lesDonneesString += lesDonnees.get(i).get(j) + ";\n";
-                        }
-                        else {
+                        } else {
                             lesDonneesString += lesDonnees.get(i).get(j) + ";";
                         }
                     }
@@ -133,8 +132,7 @@ public class MainActivity extends AppCompatActivity {
                     osw.append(lesDonneesString);
                     osw.close();
                     fOut.close();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
@@ -158,38 +156,31 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
     }
 
-    public ArrayList<String> getInformations(){
+    public ArrayList<String> getInformations() {
         ArrayList<String> info = new ArrayList<>();
 
         Chip tmp;
-
-        //heure
-        info.add(getHeureVisite());
 
         //genre
         tmp = findViewById(chpGrpHommeFemme.getCheckedChipId());
         String genre = tmp.getText().toString();
 
-        info.add(genre);
 
         //age
         tmp = findViewById(chpGrpAge.getCheckedChipId());
         String age = tmp.getText().toString();
 
-        info.add(age);
 
         //ville
-        
-        if (Ville.contains("--Selectionnez une ville--")){
+
+        if (Ville.contains("--Selectionnez une ville--")) {
 
             Ville = AutreVille.getText().toString();
 
         }
-        
-        info.add(Ville);
+
 
         //Situation
         tmp = findViewById(chpGrpSituationActuel.getCheckedChipId());
@@ -197,51 +188,44 @@ public class MainActivity extends AppCompatActivity {
 
         //niveau etudes
         String Etude;
-        if(Situation != "A la recherche d'un emploi"){
+        if (Situation != "A la recherche d'un emploi") {
             tmp = findViewById(chpGrpNiveauEtude.getCheckedChipId());
             Etude = tmp.getText().toString();
+        } else {
+            Etude = "";
         }
-        else{
-             Etude = "";
-        }
-        info.add(Situation);
-        info.add(Etude);
 
         //Diplome
         tmp = findViewById(chpGrpDiplomeObtenu.getCheckedChipId());
         String Diplome = tmp.getText().toString();
 
-        info.add(Diplome);
 
         //autre Diplome
         List<Integer> DiplomeIDs;
         DiplomeIDs = chpGrpDiplomeAutre.getCheckedChipIds();
-        String lesDiplomes="";
-        if( DiplomeIDs != null){
+        String lesDiplomes = "";
+        if (DiplomeIDs != null) {
 
-            for (Integer id:DiplomeIDs) {
+            for (Integer id : DiplomeIDs) {
                 tmp = findViewById(id);
-                if(!lesDiplomes.isEmpty()){
+                if (!lesDiplomes.isEmpty()) {
 
                     lesDiplomes += ", " + tmp.getText().toString();
 
-                }
-                else lesDiplomes += tmp.getText().toString();
+                } else lesDiplomes += tmp.getText().toString();
             }
 
         }
 
-        if (AutreDiplomeSco.getText().length() != 0){
+        if (AutreDiplomeSco.getText().length() != 0) {
 
-            if(!lesDiplomes.isEmpty()){
+            if (!lesDiplomes.isEmpty()) {
 
                 lesDiplomes += ", " + AutreDiplomeSco.getText().toString();
 
-            }
-            else lesDiplomes += AutreDiplomeSco.getText().toString();
+            } else lesDiplomes += AutreDiplomeSco.getText().toString();
         }
 
-        info.add(lesDiplomes);
 
         //voiture/permis
         tmp = findViewById(chpGrpPermis.getCheckedChipId());
@@ -250,133 +234,136 @@ public class MainActivity extends AppCompatActivity {
         tmp = findViewById(chpGrpVehicule.getCheckedChipId());
         String voiture = tmp.getText().toString();
 
-        info.add(permis);
-        info.add(voiture);
 
         //information du forum
         List<Integer> InfoIDs;
         InfoIDs = chpGrpCommentInforme.getCheckedChipIds();
-        String lesInfo="";
-        if( InfoIDs != null){
+        String lesInfo = "";
+        if (InfoIDs != null) {
 
-            for (Integer id:InfoIDs) {
+            for (Integer id : InfoIDs) {
                 tmp = findViewById(id);
-                if(!lesInfo.isEmpty()){
+                if (!lesInfo.isEmpty()) {
 
                     lesInfo += ", " + tmp.getText().toString();
 
-                }
-                else lesInfo += tmp.getText().toString();
+                } else lesInfo += tmp.getText().toString();
             }
 
         }
 
-        if (AutreInformation.getText().length() != 0){
+        if (AutreInformation.getText().length() != 0) {
 
-            if(!lesInfo.isEmpty()){
+            if (!lesInfo.isEmpty()) {
 
                 lesInfo += ", " + AutreInformation.getText().toString();
 
-            }
-            else lesInfo += AutreInformation.getText().toString();
+            } else lesInfo += AutreInformation.getText().toString();
         }
 
-        info.add(lesInfo);
 
         //Secteur activite
         List<Integer> ActiviteIDs;
         ActiviteIDs = chpGrpSecteurActivite.getCheckedChipIds();
-        String lesActivites="";
-        if( ActiviteIDs != null){
+        String lesActivites = "";
+        if (ActiviteIDs != null) {
 
-            for (Integer id:ActiviteIDs) {
+            for (Integer id : ActiviteIDs) {
                 tmp = findViewById(id);
-                if(!lesActivites.isEmpty()){
+                if (!lesActivites.isEmpty()) {
 
                     lesActivites += ", " + tmp.getText().toString();
 
-                }
-                else lesActivites += tmp.getText().toString();
+                } else lesActivites += tmp.getText().toString();
             }
 
         }
 
-        if (AutreActivite.getText().length() != 0){
+        if (AutreActivite.getText().length() != 0) {
 
-            if(!lesActivites.isEmpty()){
+            if (!lesActivites.isEmpty()) {
 
                 lesActivites += ", " + AutreActivite.getText().toString();
 
-            }
-            else lesActivites += AutreActivite.getText().toString();
+            } else lesActivites += AutreActivite.getText().toString();
         }
 
-        info.add(lesActivites);
 
         //orientation
         tmp = findViewById(chpGrpOrientation.getCheckedChipId());
         String orientation = tmp.getText().toString();
 
-        info.add(orientation);
 
         //offres interessante
         tmp = findViewById(chpGrpOffreInteressante.getCheckedChipId());
         String offre = tmp.getText().toString();
 
-        info.add(offre);
 
         //Nombre d'offre
         String NBoffre = "";
         NBoffre = OffreCount.getText().toString();
 
-        info.add(NBoffre);
 
         //depose CV
         String cv = "";
-        cv=EntrepriseCV.getText().toString();
+        cv = EntrepriseCV.getText().toString();
 
-        info.add(cv);
 
         //decroche
         List<Integer> decrocheIDs;
         decrocheIDs = chpGrpDecroche.getCheckedChipIds();
-        String lesDecroche="";
-        if( decrocheIDs != null){
+        String lesDecroche = "";
+        if (decrocheIDs != null) {
 
-            for (Integer id:decrocheIDs) {
+            for (Integer id : decrocheIDs) {
                 tmp = findViewById(id);
-                if(! lesDecroche.isEmpty()){
+                if (!lesDecroche.isEmpty()) {
 
                     lesDecroche += ", " + tmp.getText().toString();
 
-                }
-                else  lesDecroche += tmp.getText().toString();
+                } else lesDecroche += tmp.getText().toString();
             }
 
         }
 
-        info.add(lesDecroche);
 
         // deplacement
 
         tmp = findViewById(chpGrpDeplacement.getCheckedChipId());
         String deplacement = tmp.getText().toString();
 
-        info.add(deplacement);
 
         //rayon deplacement
 
         tmp = findViewById(chpGrpRayon.getCheckedChipId());
         String rayon = tmp.getText().toString();
 
-        info.add(rayon);
 
         //remarques
 
         String remarques = Remarques.getText().toString();
 
-        info.add(remarques);
 
+        info.add(getHeureVisite());
+        info.add(genre);//inportant
+        info.add(age);//inportant
+        info.add(Ville);//inportant
+        info.add(Situation);//inportant
+        info.add(Etude);
+        info.add(Diplome);//inportant
+        info.add(lesDiplomes);
+        info.add(permis);//inportant
+        info.add(voiture);//inportant
+        info.add(lesInfo);//inportant
+        info.add(lesActivites);//inportant
+        info.add(orientation);//inportant
+        info.add(offre);//inportant
+        info.add(NBoffre);
+        info.add(cv);
+        info.add(lesDecroche);//inportant
+        info.add(deplacement);
+        info.add(rayon);
+        info.add(remarques);
 
         return info;
 
@@ -389,35 +376,36 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> colonnes = new ArrayList<>();
 
         colonnes.add("Heure de visite");
-        colonnes.add("Genre");
-        colonnes.add("Age");
-        colonnes.add("Lieu d'habitation (ville)");
-        colonnes.add("Situation actuelle");
+        colonnes.add("Genre");//inportant
+        colonnes.add("Age");//inportant
+        colonnes.add("Lieu d'habitation (ville)");//inportant
+        colonnes.add("Situation actuelle");//inportant
         colonnes.add("Niveau d'études");
-        colonnes.add("Diplôme obtenu");
+        colonnes.add("Diplôme obtenu");//inportant
         colonnes.add("Autres diplômes");
-        colonnes.add("A le permis");
-        colonnes.add("A un véhicule");
-        colonnes.add("Informé(e) par");
-        colonnes.add("Secteur d'activité");
-        colonnes.add("S'est orienté(e) dans le forum");
-        colonnes.add("Offres intéressantes");
+        colonnes.add("A le permis");//inportant
+        colonnes.add("A un véhicule");//inportant
+        colonnes.add("Informé(e) par");//inportant
+        colonnes.add("Secteur d'activité");//inportant
+        colonnes.add("S'est orienté(e) dans le forum");//inportant
+        colonnes.add("Offres intéressantes");//inportant
         colonnes.add("Nombre d'offres");
         colonnes.add("A postulé auprès de");
-        colonnes.add("A décroché");
+        colonnes.add("A décroché");//inportant
         colonnes.add("Peux se déplacer");
         colonnes.add("Distance de déplacement");
         colonnes.add("Remarques particulières");
 
         return colonnes;
     }
+
     public String getHeureVisite() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         return sdf.format(cal.getTime());
     }
 
-    public void restartActivity(){
+    public void restartActivity() {
         Intent mIntent = getIntent();
         finish();
         startActivity(mIntent);

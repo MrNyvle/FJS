@@ -334,12 +334,12 @@
                         android:id="@+id/chipGroupNiveauEtude"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        app:selectionRequired="true"
+                        app:selectionRequired="false"
                         app:singleSelection="true">
 
                         <Space
                             android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip1erTerminale"
@@ -350,40 +350,40 @@
 
                         <Space
                             android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip1erPostBac"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:checkable="true"
                             android:text="@string/_1er_annee_post_bac" />
 
                         <Space
                             android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip2ePostBac"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:checkable="true"
                             android:text="@string/_2eme_annee_post_bac" />
 
                         <Space
                             android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip3ePostBac"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:checkable="true"
                             android:text="@string/_3eme_annee_post_bac" />
 
                         <Space
                             android:layout_width="50dp"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent" />
                     </com.google.android.material.chip.ChipGroup>
 
                     <Space
